@@ -12,7 +12,16 @@ import {
   Grid,
   Column,
 } from '@carbon/react';
+
 import Image from 'next/image';
+
+import { InfoSection, InfoCard } from '@/components/Info/Info';
+
+import {
+  Advocate,
+  Globe,
+  AcceleratingTransformation,
+} from '@carbon/pictograms-react';
 
 export default function LandingPage() {
   return (
@@ -108,7 +117,11 @@ export default function LandingPage() {
             sm={4}
             className="landing-page__title"
           >
-            Carbon is Open
+            <InfoCard
+              heading="Carbon is Open"
+              body="It's a distributed effort, guided by the principles of the open-source movement. Carbon's users are also it's makers, and everyone is encouraged to contribute."
+              icon={() => <Advocate size={32} />}
+            />
           </Column>
           <Column
             lg={{ start: 9, span: 3 }}
@@ -116,7 +129,11 @@ export default function LandingPage() {
             sm={4}
             className="landing-page__title"
           >
-            Carbon is Modular
+            <InfoCard
+              heading="Carbon is Modular"
+              body="Carbon's modularity ensures maximum flexibility in execution. It's components are designed to work seamlessly with each other, in whichever combination suits the needs of the user."
+              icon={() => <AcceleratingTransformation size={32} />}
+            />
           </Column>
           <Column
             lg={{ start: 13, span: 3 }}
@@ -124,7 +141,11 @@ export default function LandingPage() {
             sm={4}
             className="landing-page__title"
           >
-            Carbon is Consistent
+            <InfoCard
+              heading="Carbon is Consistent"
+              body="Based on the comprehensive IBM Design Language, every element and component of Carbon was designed from the ground up to work elegantly together to ensure consistent, cohesive user experiences."
+              icon={() => <Globe size={32} />}
+            />
           </Column>
         </Grid>
       </Column>
